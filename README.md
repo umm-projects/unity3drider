@@ -20,6 +20,10 @@ $ npm install --no-save @umm/unity3drider
 * IntelliJ Rider RC
     * Unity Plugin 2.0.0
 
+# See Also
+
+* https://github.com/umm-projects/unity3drider
+
 # License
 
 Copyright (c) 2017 Tetsuya Mori
