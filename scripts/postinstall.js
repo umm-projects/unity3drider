@@ -13,7 +13,7 @@ if ('node_modules' != path.basename(path.resolve(script_directory, (has_scope ? 
 }
 
 // スクリプトの存在するディレクトリから見たパス
-var source = path.resolve(script_directory, '../Assets');
+var source = path.resolve(script_directory, '../Assets/');
 var destination = path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules');
 // パッケージ名を PascalCase にして付与
 //   (ネームスペースを持つ場合、そのまま namespace + @ をプレフィックスにする)
@@ -23,9 +23,9 @@ if (/^@/.test(package.name)) {
     function(match, namespace, package_name) {
       return namespace + '@' + package_name;
     }
-  );
+  ) + '/';
 } else {
-  destination += '/' + package.name;
+  destination += '/' + package.name + '/';
 }
 
 // 宛先ディレクトリを作る (mkdir -p)
