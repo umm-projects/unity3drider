@@ -13,9 +13,9 @@ if ('node_modules' != path.basename(path.resolve(script_directory, (has_scope ? 
 }
 
 // スクリプトの存在するディレクトリから見たパス
-var source = path.resolve(script_directory, '../Assets');
+var source = path.resolve(script_directory, '../Assets/Plugins/Editor/JetBrains');
 // Rider のプラグインは Assets/Plugins/Editor/JetBrains/ 以下に配置する
-var destination = path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets');
+var destination = path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Plugins/Editor/JetBrains');
 
 // 宛先ディレクトリを作る (mkdir -p)
 mkdirp(destination, function(err) {
