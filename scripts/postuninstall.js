@@ -14,19 +14,8 @@ if ('node_modules' != path.basename(path.resolve(script_directory, (has_scope ? 
 }
 
 // スクリプトの存在するディレクトリから見たパス
-var destination = path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules');
-// パッケージ名を PascalCase にして付与
-//   (ネームスペースを持つ場合、そのまま namespace + @ をプレフィックスにする)
-if (/^@/.test(package.name)) {
-  destination += '/' + package.name.replace(
-    /^@([^\/]+)\/(.*)$/,
-    function(match, namespace, package_name) {
-      return namespace + '@' + package_name;
-    }
-  );
-} else {
-  destination += '/' + package.name;
-}
+//   無関係なディレクトリを消さないように、ちょっと潜ったパスを削除する
+var destination = path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Plugins/Editor/JetBrains');
 
 // 配置先ディレクトリを全削除
 fs.access(
