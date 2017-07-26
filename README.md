@@ -9,10 +9,10 @@
 # Install
 
 ```shell
-$ npm install --no-save @umm/unity3drider
+$ npm install --save-optional @umm/unity3drider
 ```
 
-* `--no-save` オプションを付けないと、 Rider 使っていない環境にも配信されてしまうので注意が必要です
+* `--save-optional` オプションを付けないと、 Rider 使っていない環境にも配信されてしまうので注意が必要です
 
 # System Requirement
 
