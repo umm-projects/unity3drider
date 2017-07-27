@@ -12,23 +12,10 @@ if ('node_modules' != path.basename(path.resolve(script_directory, (has_scope ? 
   return;
 }
 
-// パッケージ名を決定
-//   (ネームスペースを持つ場合、そのまま namespace + @ をプレフィックスにする)
-var package_name = '';
-if (/^@/.test(package.name)) {
-  package_name = package.name.replace(
-    /^@([^\/]+)\/(.*)$/,
-    function(match, namespace, name) {
-      return namespace + '@' + name;
-    }
-  );
-} else {
-  package_name = package.name;
-}
-
 // スクリプトの存在するディレクトリから見たパス
-var source = path.resolve(script_directory, '../Assets');
-var destination = path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules/' + package_name);
+var source = path.resolve(script_directory, '../Assets/Plugins/Editor/JetBrains');
+// Rider のプラグインは Assets/Plugins/Editor/JetBrains/ 以下に配置する
+var destination = path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Plugins/Editor/JetBrains');
 
 // 宛先ディレクトリを作る (mkdir -p)
 mkdirp(destination, function(err) {
