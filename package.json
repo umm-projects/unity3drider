@@ -1,6 +1,6 @@
 {
   "name": "@umm/unity3drider",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "IntelliJ Rider Plugin for Unity",
   "homepage": "https://github.com/umm-projects/unity3drider",
   "bugs": {
